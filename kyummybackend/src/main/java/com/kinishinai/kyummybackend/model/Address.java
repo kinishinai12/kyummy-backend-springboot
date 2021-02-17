@@ -1,6 +1,5 @@
 package com.kinishinai.kyummybackend.model;
 
-import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -16,19 +15,23 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Products {
-	@Id
-	@GeneratedValue
-	@Column(length = 16)
+public class Address {
+    @Id
+    @GeneratedValue
+    @Column(length = 16)
 	private UUID id;
+	private String region;
+	private String province;
+	private String city;
+	private String barangay;
+	private String postalCode;
+	private String detailedAddress;
+	//TODO: remember userId
+	@Column(length = 16)
+	private UUID userId;
+	private boolean youWantItToBeDefault;
 	
-	@Column(name="product_name")
-	private String productName;
-	private String price;
-	private String quantity;
-	private String productDescription;
-	private Date dateAdded;
-	private String img;
-	private String category;
+	
+	
 	
 }

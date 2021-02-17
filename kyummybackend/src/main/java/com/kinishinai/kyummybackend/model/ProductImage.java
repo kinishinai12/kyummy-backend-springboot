@@ -1,6 +1,6 @@
 package com.kinishinai.kyummybackend.model;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -16,19 +16,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Products {
+public class ProductImage {
 	@Id
 	@GeneratedValue
 	@Column(length = 16)
 	private UUID id;
-	
-	@Column(name="product_name")
-	private String productName;
-	private String price;
-	private String quantity;
-	private String productDescription;
-	private Date dateAdded;
-	private String img;
-	private String category;
-	
+	private String image;
+	@Column(length = 16)
+	private UUID productId;
 }
